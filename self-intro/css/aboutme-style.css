@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+}
+
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+em {
+    color: #5a634c;
+}
+
+header {
+    position: relative;
+    /* height:300px; */
+    /* height: 100vh; */
+    /* position: fixed;; */
+}
+
+.container {
+    margin: 4vw;
+}
+
+#name {
+    color: #7a2c2c;
+}
+
+h1 {
+    margin: 0;
+    color: #fafafa;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.16), 0px 2px 2px rgba(0, 0, 0, 0.23);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.4em;
+}
+
+header div:nth-child(1) {
+    padding: 10px;
+    text-align: center;
+}
+
+.card {
+    margin: 15px;
+    padding: 10px;
+    background-color: #fafafa;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.16), 0px 3px 3px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+}
+
+header,
+footer {
+    padding: 15px;
+    width: 100%;
+    margin: 0;
+    background-color: #9b9189;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.16), 0px 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+h2 {
+    color: #57504b;
+}
+
+li {
+    list-style: none;
+}
+
+a:link,a:visited {
+    color: #7a2c2c;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
+    text-transform: uppercase;
+}
+
+#part2,
+#part3 {
+    text-align: center;
+    /* display: inline; */
+    /* overflow: hidden; */
+}
+
+#part2 ul {
+    margin: 0;
+    padding: 0;
+}
+
+#part2 li,
+#part2 div,
+#part3>div {
+    margin-top: 20px;
+}
+
+#part2 ul {
+    position: relative;
+}
+
+small span {
+    color:#5a634c;
+    position: relative;
+    top:40px;
+    text-align: center;
+    width: 50%;
+    float: left;
+}
+
+footer>div>div {
+    text-align: center;
+}
+
+@media (min-width: 996px) {
+    #part2 {
+        height: 470px;
+    }
+    #part2 img {
+        max-height: 100%;
+        position: relative;
+        /* left:-50px; */
+    }
+    #part2 li {
+        width: 33.33%;
+        float: left;
+        overflow: hidden;
+    }
+    #part3 {
+        height: 440px;
+    }
+    #part3>div {
+        width: 50%;
+        float: left;
+    }
+    hr{
+        display: none;
+    }
+}
