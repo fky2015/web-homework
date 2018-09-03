@@ -17,7 +17,7 @@ window.onload = function () {
 
 function Timing(){
     var ThisTime = new Date();
-    var second = ThisTime.getSeconds()-window.startTime.getSeconds();
+    var second = (ThisTime.getTime()-window.startTime.getTime())/1000;
     document.getElementById("timer").innerText = second + ' s';
     return second;
 }
@@ -117,3 +117,10 @@ document.getElementById("button").onclick = function () {
     document.getElementById("form").submit();
     return true; // 阻断
 }
+
+var a;
+function testfunc(first) {
+    window.a = this
+}
+
+document.getElementById("test-box").onclick=testfunc;

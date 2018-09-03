@@ -1,36 +1,42 @@
 *{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color:white; */
 }
 div, input{
     font-size: 20px;
 }
 h1{
-    font-size: 3em;
+    font-size: 2.6em;
     width: 60%;
     margin: 30px auto;
     padding: 20px;
-    border-bottom: 3px solid black;
+    color: rgb(63, 57, 57);
+    text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
+    border-bottom: 3px solid rgb(114, 64, 64);
 }
 body,
 header::before,
-main::before {
-    background: url('/img/test2.png') 0 / cover fixed;
+main::before,
+#sidebar::before {
+    background: url('/img/adwaita-morning.jpg') 0 / cover fixed;
 }
 
 header,
-main {
+main,
+#sidebar {
     position: relative;
     /* background: hsla(0, 0, 100%, .3); */
     overflow: hidden;
     margin: 30px;
     padding: 20px 80px;
-    box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
+    box-shadow: 5px 5px 3px rgba(44, 44, 44, .5);
     /* background-color: aliceblue; */
 }
 
 header::before,
-main::before {
+main::before,
+#sidebar::before {
     content: '';
     position: absolute;
     top: 0;
@@ -44,22 +50,44 @@ main::before {
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 }
 
+header, main {
+    float: left;
+    width:60%;
+}
+#sidebar{
+    position: fixed;
+    right: 0;
+    width: 32%;
+    height:80%;
+    float: right;
+}
+
+#code{
+    background: transparent;
+    color:whitesmoke;
+}
 h3,
 header,
 legend {
     text-align: center;
+    
+}
+legend{
+    border:2px solid #fff;
 }
 
+
 fieldset,#table {
-    width: 50%;
+    width: 60%;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 40px;
+    border: #fff 2px solid;
 }
 
 fieldset:nth-child(1),
 fieldset:nth-child(4) {
-    width: 50%;
+    width: 60%;
     margin: auto;
     text-align: center;
     /* background-color: #fff; */
@@ -68,6 +96,15 @@ fieldset:nth-child(4) {
 .button {
     margin: 20px;
     text-align: center;
+
+}
+#button{
+    background:transparent;
+    color:white;
+    border: 2px white solid;
+    height: 40px;
+    width:240px;
+    font-size: 1.2em;
 }
 #navbar-fix{
     background-color: rgba(236, 236, 236,0.7);
@@ -76,24 +113,42 @@ fieldset:nth-child(4) {
     z-index: 20;
     top: 0px;
     left:0px;
-    padding:8px 30px;
+    padding:8px 0px;
+    margin: 0;
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 
 }
 #navbar, #navbar-fix{
     height: 40px;
 }
-#timer{
+/* #timer{
     float: left;
 
 }
 
 #time{
-    /* width: 40%; */
-    float: right;
-    /* position: relative; */
+    
+} */
+#navbar-fix >div{
+    /* display: inline-block; */
+    float: left;
+    width: 14%;
+    text-align: center;
+    margin: 0;
+    padding:0;
+    border-left: 2px rgb(113, 138, 134) solid;
+
 }
 
+a{
+    text-decoration: none;
+}
+a:hover{
+/* TODO */
+}
+#navbar-fix >div:first-child{
+    border:none;
+}
 
 fieldset > div{
     /* border-bottom-style: groove; */
@@ -135,3 +190,4 @@ fieldset:first-child  option  {
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 
 }
+
