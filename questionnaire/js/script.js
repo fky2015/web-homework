@@ -9,10 +9,17 @@ window.onload = function () {
     } else {
         greetString += "Good Evening!"
     }
-    greetString += "   It's " + this.startTime.toLocaleString() + " .";
+    // greetString += "   It's " + this.startTime.toLocaleString() + " .";
     document.getElementById("time").textContent = greetString;
 
+    this.setInterval("Timing()",1000);
+}
 
+function Timing(){
+    var ThisTime = new Date();
+    var second = ThisTime.getSeconds()-window.startTime.getSeconds();
+    document.getElementById("timer").innerText = second + ' s';
+    return second;
 }
 
 function verifyRadio(name, answer, point = 5) {
@@ -86,7 +93,7 @@ document.getElementById("button").onclick = function () {
     var name = document.getElementById("name");
     var email = document.getElementById("mail");
     var id = document.getElementById("id");
-    if (name.innerText === "" || email.innerText === "" || id.innerText === "") {
+    if (name.value === "" || email.value === "" || id.value === "") {
         alert("基本信息未填写完毕！");
         return false;
     }
@@ -103,10 +110,10 @@ document.getElementById("button").onclick = function () {
     score += verifyCode('q5', 3, 9);
 
     var endTime = new Date();
-
-    alert('\nyour point is ' + score + ' / ' + 25 + '\n\n' + '总时间: ' + (endTime - window.startTime) / 1000 + ' seconds');
+    var totalTime = Timing();
+    alert('\nyour point is ' + score + ' / ' + 25 + '\n\n' + '总时间: ' + totalTime + ' seconds');
     // console.log((endTime - window.startTime) / 1000 + ' seconds');
-
+    var node = document.getElementById("score").value = score;
 
     return false; // 阻断
 }

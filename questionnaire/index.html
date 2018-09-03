@@ -10,12 +10,18 @@
 </head>
 
 <body>
+    <nav id="navbar">
+        <div id="navbar-fix">
+            <div id="timer">ready to start</div>
+            <div id="time"></div>
+        </div>
+    </nav>
     <header>
         <h1>计算机基础知识竞赛</h1>
         <div>
             <p>计算机基础是每一个计算机专业学生必须具备的基础能力，本试题将从多个方面检查答题者的这种能力</p>
         </div>
-        <span id='time'></span>
+        <!-- <span id='time'></span> -->
     </header>
     <main>
         <form method="post">
@@ -32,7 +38,6 @@
                     <input type="text" id="id" maxlength="10">
 
                 </div>
-
             </fieldset>
 
             <fieldset>
@@ -65,7 +70,6 @@
                     <input type="checkbox" name="q3" value="B"> B.硬件系统<br>
                     <input type="checkbox" name="q3" value="C"> C.打印机<br>
                     <input type="checkbox" name="q3" value="D"> D.软件系统
-
                 </div>
                 <div>
                     <h3>下列指标中____是微机的主要性能特征</h3>
@@ -90,7 +94,9 @@ function (x){
                 </textarea>
                 </div>
             </fieldset>
-
+            <div class="hide">
+                <input type="text" id="score" value="">
+            </div>
             <div class="button">
                 <button type="submit" id="button">提交信息</button>
             </div>
