@@ -1,10 +1,16 @@
 *{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* color:white; */
+    color:rgb(207, 196, 191);
 }
 div, input{
-    font-size: 20px;
+    font-size: 25px;
+}
+input{
+    text-align: center;
+}
+nav div,nav a{
+    color:rgb(54, 33, 33);
 }
 h1{
     font-size: 2.6em;
@@ -19,7 +25,7 @@ body,
 header::before,
 main::before,
 #sidebar::before {
-    background: url('/img/adwaita-morning.jpg') 0 / cover fixed;
+    background: url('/img/Fabric.jpg') 0 / cover fixed;
 }
 
 header,
@@ -45,7 +51,7 @@ main::before,
     left: 0;
     /* background: rgba(255, 0, 0, .5); */
     z-index: -1;
-    filter: blur(15px);
+    filter: blur(20px);
     margin: -30px;
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 }
@@ -93,6 +99,7 @@ fieldset:nth-child(4) {
     /* background-color: #fff; */
 }
 
+
 .button {
     margin: 20px;
     text-align: center;
@@ -105,6 +112,8 @@ fieldset:nth-child(4) {
     height: 40px;
     width:240px;
     font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
 }
 #navbar-fix{
     background-color: rgba(236, 236, 236,0.7);
@@ -183,7 +192,7 @@ td{
 fieldset:first-child  input,
 fieldset:first-child  select,
 fieldset:first-child  option  {
-    width: 200px;
+    width: 250px;
     height: 40px;
     background-color: transparent;
     border: #fff 3px solid;
@@ -191,3 +200,13 @@ fieldset:first-child  option  {
 
 }
 
+
+
+#success{
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color:green;
+}

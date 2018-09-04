@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="/js/script.js"></script>
 </head>
 
 <body>
@@ -31,18 +34,18 @@
         <!-- <span id='time'></span> -->
     </header>
     <main>
-        <form method="post" action="" id="form">
+        <form id="form" method="POST">
             <fieldset id="field1">
                 <legend>基本信息</legend>
 
                 <div><label for="name">姓名:</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="testname">
                 </div>
                 <div><label for="mail">邮箱:</label>
-                    <input type="email" name="mail" id="mail">
+                    <input type="email" name="mail" id="mail" value="testemail@mail.com">
                 </div>
                 <div><label for="id">学号:</label>
-                    <input type="text" id="id" name="id" maxlength="10">
+                    <input type="text" id="id" name="id" maxlength="10" value="234234">
 
                 </div>
                 <div><label for="sex">性别:</label>
@@ -111,9 +114,13 @@ function (x){
                 <input type="text" name="score" id="score" value="">
             </div>
             <div class="button">
-                <button type="submit" id="button">提交信息</button>
+                <button id="button">提交信息</button>
+            </div>
+            <div id="success">
+                ✓
             </div>
         </form>
+
 
         <!-- <div id="table">
         <table border="1" width="100%">
@@ -143,7 +150,10 @@ function (x){
     </div>
 
 
-    <script src="/js/script.js"></script>
+
 </body>
 
 </html>
+
+
+
