@@ -1,5 +1,4 @@
 <?php
-require("receive.php");
+require "receive.php";
 
 echo $name;
-?>

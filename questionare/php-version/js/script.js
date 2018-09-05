@@ -15,13 +15,13 @@ $(function () {
   window.Timing = function () {
     var ThisTime = new Date()
     var second = (ThisTime.getTime() - window.startTime.getTime()) / 1000
-    document.getElementById('timer').innerText = (0|second) + ' s'
+    document.getElementById('timer').innerText = (0 | second) + ' s'
     return second
   }
 
   document.interval = setInterval('Timing()', 1000);
 
-  function verifyRadio (name, answer, point = 5) {
+  function verifyRadio(name, answer, point = 5) {
     var nodes = document.getElementsByName(name)
     var res = ''
     for (let i = 0; i < nodes.length; i++) {
@@ -37,7 +37,7 @@ $(function () {
     return 0
   }
 
-  function verifyCheckbox (name, answer, totalpoint = 5) {
+  function verifyCheckbox(name, answer, totalpoint = 5) {
     // answer => Array()
     var nodes = document.getElementsByName(name)
     var res = []
@@ -58,9 +58,9 @@ $(function () {
     return totalpoint / answer.length * res.length
   }
 
-  function tryToRun (code) {
-    console.log(code)
-    ;(code)
+  function tryToRun(code) {
+    console.log(code);
+    (code)
     try {
       eval(code)
     } catch (err) {
@@ -74,7 +74,7 @@ $(function () {
 
   var func = function () {}
 
-  function verifyCode (name, input, answer, point = 5) {
+  function verifyCode(name, input, answer, point = 5) {
     var code = 'func = ' + document.getElementsByName(name)[0].value
     ret = tryToRun(code)
     if (ret == false) {
@@ -119,40 +119,46 @@ $(function () {
     $.ajax({
       type: 'POST',
       url: 'add.php',
-      data: {name:name.value,score:score,time:totalTime},
+      data: {
+        name: name.value,
+        score: score,
+        time: totalTime
+      },
       timeout: 3000,
       success: function (msg) {
-          // 提交成功后的回调函数
+        // 提交成功后的回调函数
         $('button').hide('fast');
         $('#success').fadeIn('slow');
-        
+
       },
-      error: function(XMLHttpRequest, textStatus,errorThrown){
-        $('button')[0].innerText='连网失败';
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        $('button')[0].innerText = '连网失败';
       }
     });
 
     return false; // 阻断
   }
 
-  function  query(event){
+  function query(event) {
     var name = $("#name")[0].value;
-    if(event.ctrlKey){
+    if (event.ctrlKey) {
       name = '';
     }
     $.ajax({
       type: 'POST',
       url: 'query.php',
-      data:{name:name},
+      data: {
+        name: name
+      },
       timeout: 2000,
       success: function (msg) {
-          // 提交成功后的回调函数
-          // console.log('let it be');
-          
+        // 提交成功后的回调函数
+        // console.log('let it be');
+
         $('#result-table')[0].innerHTML = msg;
       },
-      error: function(XMLHttpRequest, textStatus,errorThrown){
-        $("#check-score")[0].innerText='连网失败';
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        $("#check-score")[0].innerText = '连网失败';
       }
     });
   };
@@ -161,10 +167,3 @@ $(function () {
   document.getElementById("check-score").onclick = query;
 
 });
-
-// var a
-// function testfunc(first) {
-//     window.a = this
-// }
-
-// document.getElementById("test-box").onclick=testfunc

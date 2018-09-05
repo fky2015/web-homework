@@ -1,16 +1,21 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(207, 196, 191);
+    color: rgb(207, 196, 191);
 }
-div, input{
+
+div,
+input {
     font-size: 25px;
 }
-input{
+
+input {
     text-align: center;
 }
-nav div,nav a{
-    color:rgb(54, 33, 33);
+
+nav div,
+nav a {
+    color: rgb(54, 33, 33);
 }
 
 body,
@@ -48,64 +53,66 @@ main::before,
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 }
 
-header, main,#sidebar {
+header,
+main,
+#sidebar {
     margin: 20px;
-    height:100%;
+    height: 100%;
 }
 
-#code{
+#code {
     background: transparent;
-    color:whitesmoke;
+    color: whitesmoke;
 }
+
 h3,
 header,
 legend {
     text-align: center;
-    
-}
-legend{
-    border:2px solid #fff;
 }
 
-#result-table{
-    
+legend {
+    border: 2px solid #fff;
 }
 
-
+#result-table {}
 
 .button {
     margin: 20px;
     text-align: center;
-
 }
-#button{
-    background:white;
-    color:rgb(54, 48, 41);
+
+#button {
+    background: white;
+    color: rgb(54, 48, 41);
     /* text-shadow: black 3px 3px 3px; */
     /* border: 2px white solid; */
     font-weight: bold;
     height: 40px;
-    width:240px;
-    padding:2px;
+    width: 240px;
+    padding: 2px;
     font-size: 1.1em;
     margin-left: auto;
     margin-right: auto;
 }
-#navbar-fix{
-    background-color: rgba(236, 236, 236,0.7);
+
+#navbar-fix {
+    background-color: rgba(236, 236, 236, 0.7);
     width: 100%;
     position: fixed;
     z-index: 20;
     top: 0px;
-    left:0px;
-    padding:8px 0px;
+    left: 0px;
+    padding: 8px 0px;
     margin: 0;
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
-
 }
-#navbar, #navbar-fix{
+
+#navbar,
+#navbar-fix {
     height: 40px;
 }
+
 /* #timer{
     float: left;
 
@@ -114,110 +121,113 @@ legend{
 #time{
     
 } */
-#navbar-fix >div{
+#navbar-fix>div {
     /* display: inline-block; */
     float: left;
     width: 14%;
     text-align: center;
     margin: 0;
-    padding:0;
+    padding: 0;
     border-left: 2px rgb(113, 138, 134) solid;
-
 }
 
-a{
+a {
     text-decoration: none;
 }
-a:hover{
-/* TODO */
-}
-#navbar-fix >div:first-child{
-    border:none;
+
+a:hover {
+    /* TODO */
 }
 
-fieldset > div{
+#navbar-fix>div:first-child {
+    border: none;
+}
+
+fieldset>div {
     /* border-bottom-style: groove; */
     /* border-top: 2px burlywood dotted; */
-    margin:30px 0;
+    margin: 30px 0;
 }
+
 /* 
 fieldset:nth-child(2) > div{
     border-top:none;
     background-color: yellow;
 } */
-.hide{
-    width:0;
+.hide {
+    width: 0;
     height: 0;
     overflow: hidden;
 }
 
-table {
+table {}
 
-}
-th{
+th {
     background-color: burlywood;
-    color: rgba(131, 64, 64,.5);
+    color: rgba(131, 64, 64, .5);
     border: none;
 }
-td{
-    background-color: rgba(131, 64, 64,.5);
+
+td {
+    background-color: rgba(131, 64, 64, .5);
     text-align: center;
     border: none;
-    color:#fff;
+    color: #fff;
 }
 
-fieldset:first-child  input,
-fieldset:first-child  select,
-fieldset:first-child  option  {
+fieldset:first-child input,
+fieldset:first-child select,
+fieldset:first-child option {
     width: 250px;
     height: 40px;
     background-color: transparent;
     border: #fff 3px solid;
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
-
 }
 
-
-
-#success{
+#success {
     display: none;
     margin: 0 auto;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
-    color:green;
+    color: green;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-.main-element{
+.main-element {
     width: 66.66%;
     position: relative;
     float: left;
 }
-.side-element{
+
+.side-element {
     width: 33.33%;
     position: fixed;
-    right:0;
-    height:90vh;
+    right: 0;
+    height: 90vh;
 }
 
-#check-score{
-    border:2px white solid;
+#check-score {
+    border: 2px white solid;
     width: 60%;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
 }
-#result-table{
-    width:100%;
+
+#result-table {
+    width: 100%;
     overflow: auto;
     margin: 30px 0;
 }
 
-@media(min-width:997px){
-    fieldset,#table {
+@media(min-width:997px) {
+
+    fieldset,
+    #table {
         width: 60%;
         margin: auto;
         margin-top: 40px;
@@ -225,29 +235,27 @@ h2{
         border: #fff 2px solid;
     }
 
+    fieldset:nth-child(1),
+    fieldset:nth-child(4) {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        /* background-color: #fff; */
+    }
 
-fieldset:nth-child(1),
-fieldset:nth-child(4) {
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    /* background-color: #fff; */
+    h1 {
+        font-size: 2.6em;
+        width: 60%;
+        margin: 30px auto;
+        padding: 20px;
+        color: rgb(63, 57, 57);
+        text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
+        border-bottom: 3px solid rgb(114, 64, 64);
+    }
 }
 
-h1{
-    font-size: 2.6em;
-    width: 60%;
-    margin: 30px auto;
-    padding: 20px;
-    color: rgb(63, 57, 57);
-    text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
-    border-bottom: 3px solid rgb(114, 64, 64);
-}
-}
-
-
-@media (max-width:996px){
-    h1{
+@media (max-width:996px) {
+    h1 {
         font-size: 1.6em;
         width: 90%;
         margin: 30px auto;
@@ -256,31 +264,36 @@ h1{
         text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
         border-bottom: 3px solid rgb(114, 64, 64);
     }
-    fieldset,#table {
+
+    fieldset,
+    #table {
         width: 100%;
         margin: auto;
         margin-top: 20px;
         margin-bottom: 20px;
         border: #fff 2px solid;
     }
+
     fieldset:nth-child(1),
     fieldset:nth-child(4) {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    /* background-color: #fff; */
-}
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        /* background-color: #fff; */
+    }
 
-    .main-element{
+    .main-element {
         width: 100%;
     }
-    .side-element{
+
+    .side-element {
         width: 100%;
     }
-    .side-element{
+
+    .side-element {
         width: 100%;
         position: relative;
-        right:none;
-        height:50vh;
+        right: none;
+        height: 50vh;
     }
 }
