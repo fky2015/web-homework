@@ -19,9 +19,9 @@ $(function () {
     return second
   }
 
-  document.interval = setInterval('Timing()', 1000);
+  document.interval = setInterval('Timing()', 1000)
 
-  function verifyRadio(name, answer, point = 5) {
+  function verifyRadio (name, answer, point = 5) {
     var nodes = document.getElementsByName(name)
     var res = ''
     for (let i = 0; i < nodes.length; i++) {
@@ -37,7 +37,7 @@ $(function () {
     return 0
   }
 
-  function verifyCheckbox(name, answer, totalpoint = 5) {
+  function verifyCheckbox (name, answer, totalpoint = 5) {
     // answer => Array()
     var nodes = document.getElementsByName(name)
     var res = []
@@ -58,9 +58,9 @@ $(function () {
     return totalpoint / answer.length * res.length
   }
 
-  function tryToRun(code) {
-    console.log(code);
-    (code)
+  function tryToRun (code) {
+    console.log(code)
+    ;(code)
     try {
       eval(code)
     } catch (err) {
@@ -74,7 +74,7 @@ $(function () {
 
   var func = function () {}
 
-  function verifyCode(name, input, answer, point = 5) {
+  function verifyCode (name, input, answer, point = 5) {
     var code = 'func = ' + document.getElementsByName(name)[0].value
     ret = tryToRun(code)
     if (ret == false) {
@@ -87,14 +87,14 @@ $(function () {
   }
 
   var submit_func = function (event) {
-    event.preventDefault();
+    event.preventDefault()
 
     // 检查是否为空
-    var name = document.getElementById('name');
-    var email = document.getElementById('mail');
-    var id = document.getElementById('id');
+    var name = document.getElementById('name')
+    var email = document.getElementById('mail')
+    var id = document.getElementById('id')
     if (name.value === '' || email.value === '' || id.value === '') {
-      alert('基本信息未填写完毕！');
+      alert('基本信息未填写完毕！')
       return false
     }
 
@@ -107,14 +107,14 @@ $(function () {
     score += verifyCheckbox('q4', ['A', 'B', 'C', 'D'])
     score += verifyCode('q5', 3, 9)
 
-    var endTime = new Date();
-    var totalTime = Timing();
+    var endTime = new Date()
+    var totalTime = Timing()
     // alert('\nyour point is ' + score + ' / ' + 25 + '\n\n' + '总时间: ' + totalTime + ' seconds')
     // console.log((endTime - window.startTime) / 1000 + ' seconds')
-    var node = document.getElementById('score').value = score;
+    var node = document.getElementById('score').value = score
 
     // 停止计时
-    clearInterval(document.interval);
+    clearInterval(document.interval)
 
     $.ajax({
       type: 'POST',
@@ -127,22 +127,21 @@ $(function () {
       timeout: 3000,
       success: function (msg) {
         // 提交成功后的回调函数
-        $('button').hide('fast');
-        $('#success').fadeIn('slow');
-
+        $('button').hide('fast')
+        $('#success').fadeIn('slow')
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
-        $('button')[0].innerText = '连网失败';
+        $('button')[0].innerText = '连网失败'
       }
-    });
+    })
 
     return false; // 阻断
   }
 
-  function query(event) {
-    var name = $("#name")[0].value;
+  function query (event) {
+    var name = $('#name')[0].value
     if (event.ctrlKey) {
-      name = '';
+      name = ''
     }
     $.ajax({
       type: 'POST',
@@ -153,17 +152,48 @@ $(function () {
       timeout: 2000,
       success: function (msg) {
         // 提交成功后的回调函数
-        // console.log('let it be');
+        // console.log('let it be')
 
-        $('#result-table')[0].innerHTML = msg;
+        $('#result-table')[0].innerHTML = msg
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
-        $("#check-score")[0].innerText = '连网失败';
+        $('#check-score')[0].innerText = '连网失败'
       }
-    });
-  };
+    })
+  }
 
-  document.getElementById("form").onsubmit = submit_func;
-  document.getElementById("check-score").onclick = query;
+  function click_toggle (event) {
+    var child = $(this)[0].children
+    if (!child[0].checked) {
+      child[0].checked = true
+    }else {
+      child[0].checked = false
+    }
+  }
+  function choose_toggle (event) {
+    // document.test = $(this)
+    // console.log('t')
+    var children = $(this).find('div')
+    // console.log(children)
+    // document.test = children
+    for (var i = 0;i < children.length;i++) {
+      // console.log('in loop')
+      // document.test = children[i]
+      if (children[i].firstElementChild.checked) {
+        // console.log('1')
 
-});
+        // child[0].checked = true
+        $(children[i]).css({color:'rgb(157, 146, 141)'})
+      }else {
+        // console.log('2')
+
+        // child[0].checked = false
+        $(children[i]).css('color', 'rgb(207, 196, 191)')
+      }
+    }
+  }
+  $('fieldset >div > div').click(click_toggle)
+  $('fieldset.toggle > div').delegate($('fieldset.toggle >div > div'), 'click', choose_toggle)
+  document.getElementById('form').onsubmit = submit_func
+  document.getElementById('check-score').onclick = query
+})

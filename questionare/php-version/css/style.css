@@ -154,19 +154,15 @@ fieldset>div {
     margin: 30px 0;
 }
 
-/* 
-fieldset:nth-child(2) > div{
-    border-top:none;
-    background-color: yellow;
-} */
+
 .hide {
     width: 0;
     height: 0;
     overflow: hidden;
 }
-
-table {}
-
+fieldset>div>div{
+    transition: 0.5s;
+}
 th {
     background-color: burlywood;
     color: rgba(131, 64, 64, .5);
@@ -228,6 +224,14 @@ h2 {
     background-color: rgb(65, 61, 47);
     border: 2px rgb(65, 61, 47) solid;
 }
+fieldset:not(#field1) input{
+    /* pointer-events: none; */
+    /* outline: none; */
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    /* text-decoration: None; */
+}
+
 
 #result-table {
     width: 100%;
