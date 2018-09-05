@@ -4,11 +4,6 @@
     color: rgb(207, 196, 191);
 }
 
-div,
-input {
-    font-size: 25px;
-}
-
 input {
     text-align: center;
 }
@@ -32,8 +27,8 @@ main,
     /* background: hsla(0, 0, 100%, .3); */
     overflow: hidden;
     /* margin: 30px; */
-    padding: 20px 50px;
-    box-shadow: 5px 5px 3px rgba(44, 44, 44, .5);
+    padding: 40px 50px;
+    box-shadow: 5px 5px 3px 1px rgba(44, 44, 44, .5);
     /* background-color: aliceblue; */
 }
 
@@ -69,6 +64,7 @@ h3,
 header,
 legend {
     text-align: center;
+    color: rgb(221, 221, 221);
 }
 
 legend {
@@ -94,6 +90,13 @@ legend {
     font-size: 1.1em;
     margin-left: auto;
     margin-right: auto;
+    transition: 1s;
+}
+
+#button:hover {
+    color: #fff;
+    background-color: rgb(54, 48, 41);
+    border: 1px solid rgb(54, 48, 41);
 }
 
 #navbar-fix {
@@ -132,11 +135,13 @@ legend {
 }
 
 a {
+    vertical-align: bottom;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 a:hover {
-    /* TODO */
+    color: #fff;
 }
 
 #navbar-fix>div:first-child {
@@ -216,6 +221,12 @@ h2 {
     width: 60%;
     margin: 0 auto;
     text-align: center;
+    transition: 0.5s;
+}
+
+#check-score:hover {
+    background-color: rgb(65, 61, 47);
+    border: 2px rgb(65, 61, 47) solid;
 }
 
 #result-table {
@@ -225,6 +236,11 @@ h2 {
 }
 
 @media(min-width:997px) {
+
+    div,
+    input {
+        font-size: 25px;
+    }
 
     fieldset,
     #table {
@@ -245,7 +261,7 @@ h2 {
 
     h1 {
         font-size: 2.6em;
-        width: 60%;
+        width: 80%;
         margin: 30px auto;
         padding: 20px;
         color: rgb(63, 57, 57);
@@ -255,6 +271,12 @@ h2 {
 }
 
 @media (max-width:996px) {
+
+    div,
+    input {
+        font-size: 18px;
+    }
+
     h1 {
         font-size: 1.6em;
         width: 90%;
