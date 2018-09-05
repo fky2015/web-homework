@@ -120,11 +120,15 @@ $(document).ready(function () {
       type: 'POST',
       url: 'add.php',
       data: {name:name.value,score:score},
+      timeout: 3000,
       success: function (msg) {
           // 提交成功后的回调函数
         $('button').hide('fast');
         $('#success').show('slow');
         
+      },
+      error: function(XMLHttpRequest, textStatus,errorThrown){
+        $('button')[0].innerText='连网失败';
       }
     });
 

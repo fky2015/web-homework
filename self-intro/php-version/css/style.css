@@ -12,15 +12,7 @@ input{
 nav div,nav a{
     color:rgb(54, 33, 33);
 }
-h1{
-    font-size: 2.6em;
-    width: 60%;
-    margin: 30px auto;
-    padding: 20px;
-    color: rgb(63, 57, 57);
-    text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
-    border-bottom: 3px solid rgb(114, 64, 64);
-}
+
 body,
 header::before,
 main::before,
@@ -34,7 +26,7 @@ main,
     position: relative;
     /* background: hsla(0, 0, 100%, .3); */
     overflow: hidden;
-    margin: 30px;
+    /* margin: 30px; */
     padding: 20px 80px;
     box-shadow: 5px 5px 3px rgba(44, 44, 44, .5);
     /* background-color: aliceblue; */
@@ -56,16 +48,9 @@ main::before,
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 }
 
-header, main {
-    float: left;
-    width:60%;
-}
-#sidebar{
-    position: fixed;
-    right: 0;
-    width: 32%;
-    height:80%;
-    float: right;
+header, main,#sidebar {
+    margin: 20px;
+    height:100%;
 }
 
 #code{
@@ -83,21 +68,7 @@ legend{
 }
 
 
-fieldset,#table {
-    width: 60%;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: #fff 2px solid;
-}
 
-fieldset:nth-child(1),
-fieldset:nth-child(4) {
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    /* background-color: #fff; */
-}
 
 
 .button {
@@ -106,12 +77,15 @@ fieldset:nth-child(4) {
 
 }
 #button{
-    background:transparent;
-    color:white;
-    border: 2px white solid;
+    background:white;
+    color:rgb(54, 48, 41);
+    /* text-shadow: black 3px 3px 3px; */
+    /* border: 2px white solid; */
+    font-weight: bold;
     height: 40px;
     width:240px;
-    font-size: 1.2em;
+    padding:2px;
+    font-size: 1.1em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -209,4 +183,89 @@ fieldset:first-child  option  {
     font-size: 2em;
     font-weight: bold;
     color:green;
+}
+
+h2{
+    text-align: center;
+}
+
+.main-element{
+    width: 66.66%;
+    position: relative;
+    float: left;
+}
+.side-element{
+    width: 33.33%;
+    position: fixed;
+    right:0;
+    height:90vh;
+}
+
+@media(min-width:997px){
+    fieldset,#table {
+        width: 60%;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        border: #fff 2px solid;
+    }
+
+
+fieldset:nth-child(1),
+fieldset:nth-child(4) {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    /* background-color: #fff; */
+}
+
+h1{
+    font-size: 2.6em;
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    color: rgb(63, 57, 57);
+    text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
+    border-bottom: 3px solid rgb(114, 64, 64);
+}
+}
+
+
+@media (max-width:996px){
+    h1{
+        font-size: 1.6em;
+        width: 90%;
+        margin: 30px auto;
+        padding: 20px;
+        color: rgb(63, 57, 57);
+        text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
+        border-bottom: 3px solid rgb(114, 64, 64);
+    }
+    fieldset,#table {
+        width: 100%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: #fff 2px solid;
+    }
+    fieldset:nth-child(1),
+    fieldset:nth-child(4) {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    /* background-color: #fff; */
+}
+
+    .main-element{
+        width: 100%;
+    }
+    .side-element{
+        width: 100%;
+    }
+    .side-element{
+        width: 100%;
+        position: relative;
+        right:none;
+        height:50vh;
+    }
 }
