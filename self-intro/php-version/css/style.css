@@ -17,7 +17,7 @@ body,
 header::before,
 main::before,
 #sidebar::before {
-    background: url('/img/Fabric.jpg') 0 / cover fixed;
+    background: url('/img/Fabric-mid.jpg') 0 / cover fixed;
 }
 
 header,

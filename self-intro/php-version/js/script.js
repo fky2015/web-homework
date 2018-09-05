@@ -135,10 +135,10 @@ $(function () {
     return false; // 阻断
   }
 
-  function  query(){
+  function  query(event){
     var name = $("#name")[0].value;
-    if(name === ''){
-      name == '*';
+    if(event.ctrlKey){
+      name = '';
     }
     $.ajax({
       type: 'POST',

@@ -24,7 +24,7 @@ if ($name != '' ){
 }else{
     
 
-    $sql = "SELECT * FROM score order by s_score desc， s_time asc";
+    $sql = "SELECT * FROM score ORDER BY s_score DESC , s_time ASC";
     $res = $conn->query($sql);
     echo "<tr> <th>Name</th> <th>Score</th> <th>Time</th> </tr>";
     if($res->num_rows > 0){
