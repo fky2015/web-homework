@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
   window.startTime = new Date()
   var myHour = window.startTime.getHours()
   var greetString = ''
@@ -15,7 +15,7 @@ $(document).ready(function () {
   window.Timing = function () {
     var ThisTime = new Date()
     var second = (ThisTime.getTime() - window.startTime.getTime()) / 1000
-    document.getElementById('timer').innerText = second + ' s'
+    document.getElementById('timer').innerText = (0|second) + ' s'
     return second
   }
 
@@ -119,12 +119,12 @@ $(document).ready(function () {
     $.ajax({
       type: 'POST',
       url: 'add.php',
-      data: {name:name.value,score:score},
+      data: {name:name.value,score:score,time:totalTime},
       timeout: 3000,
       success: function (msg) {
           // 提交成功后的回调函数
         $('button').hide('fast');
-        $('#success').show('slow');
+        $('#success').fadeIn('slow');
         
       },
       error: function(XMLHttpRequest, textStatus,errorThrown){
@@ -132,13 +132,35 @@ $(document).ready(function () {
       }
     });
 
-    console.log('result');
-
     return false; // 阻断
   }
-  document.getElementById("form").onsubmit = submit_func;
 
-})
+  function  query(){
+    var name = $("#name")[0].value;
+    if(name === ''){
+      name == '*';
+    }
+    $.ajax({
+      type: 'POST',
+      url: 'query.php',
+      data:{name:name},
+      timeout: 2000,
+      success: function (msg) {
+          // 提交成功后的回调函数
+          // console.log('let it be');
+          
+        $('#result-table')[0].innerHTML = msg;
+      },
+      error: function(XMLHttpRequest, textStatus,errorThrown){
+        $("#check-score")[0].innerText='连网失败';
+      }
+    });
+  };
+
+  document.getElementById("form").onsubmit = submit_func;
+  document.getElementById("check-score").onclick = query;
+
+});
 
 // var a
 // function testfunc(first) {
