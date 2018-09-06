@@ -86,6 +86,11 @@ $(function () {
     return 0
   }
 
+  function show_score (herf_value, score , totalscore) {
+    $("a[href='" + herf_value + "']")[0].innerText = score + ' / ' + totalscore
+    return score
+  }
+
   var submit_func = function (event) {
     event.preventDefault()
 
@@ -101,11 +106,9 @@ $(function () {
     // 计算分数
 
     score = 0
-    score += verifyRadio('q1', 'C')
-    score += verifyRadio('q2', 'C')
-    score += verifyCheckbox('q3', ['B', 'D'])
-    score += verifyCheckbox('q4', ['A', 'B', 'C', 'D'])
-    score += verifyCode('q5', 3, 9)
+    score += show_score('#field2', verifyRadio('q1', 'C') + verifyRadio('q2', 'C'), 10)
+    score += show_score('#field3', verifyCheckbox('q3', ['B', 'D']) + verifyCheckbox('q4', ['A', 'B', 'C', 'D']), 10)
+    score += show_score('#field4', verifyCode('q5', 3, 9), 5)
 
     var endTime = new Date()
     var totalTime = Timing()
@@ -115,6 +118,13 @@ $(function () {
 
     // 停止计时
     clearInterval(document.interval)
+    console.log(event);
+    
+    // if (event.ctrlKey) {
+      msg = 'your score: ' + score + '\n'
+      msg += 'your time: ' + totalTime + '\n'
+      alert(msg);
+    // }
 
     $.ajax({
       type: 'POST',
@@ -183,7 +193,7 @@ $(function () {
         // console.log('1')
 
         // child[0].checked = true
-        $(children[i]).css({color:'rgb(157, 146, 141)'})
+        $(children[i]).css({color: 'rgb(157, 146, 141)'})
       }else {
         // console.log('2')
 

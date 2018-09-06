@@ -13,23 +13,13 @@ nav a {
     color: rgb(54, 33, 33);
 }
 
-body,
-header::before,
-main::before,
-#sidebar::before {
-    background: url('/img/Fabric-mid.jpg') 0 / cover fixed;
-}
-
 header,
 main,
 #sidebar {
     position: relative;
-    /* background: hsla(0, 0, 100%, .3); */
     overflow: hidden;
-    /* margin: 30px; */
     padding: 40px 50px;
     box-shadow: 5px 5px 3px 1px rgba(44, 44, 44, .5);
-    /* background-color: aliceblue; */
 }
 
 header::before,
@@ -116,16 +106,7 @@ legend {
     height: 40px;
 }
 
-/* #timer{
-    float: left;
-
-}
-
-#time{
-    
-} */
 #navbar-fix>div {
-    /* display: inline-block; */
     float: left;
     width: 14%;
     text-align: center;
@@ -149,20 +130,19 @@ a:hover {
 }
 
 fieldset>div {
-    /* border-bottom-style: groove; */
-    /* border-top: 2px burlywood dotted; */
     margin: 30px 0;
 }
-
 
 .hide {
     width: 0;
     height: 0;
     overflow: hidden;
 }
-fieldset>div>div{
+
+fieldset>div>div {
     transition: 0.5s;
 }
+
 th {
     background-color: burlywood;
     color: rgba(131, 64, 64, .5);
@@ -220,18 +200,20 @@ h2 {
     transition: 0.5s;
 }
 
+textarea{
+    width: 80%;
+    height:30vh;
+}
+
 #check-score:hover {
     background-color: rgb(65, 61, 47);
     border: 2px rgb(65, 61, 47) solid;
 }
-fieldset:not(#field1) input{
-    /* pointer-events: none; */
-    /* outline: none; */
+
+fieldset:not(#field1) input {
     position: absolute;
     clip: rect(0, 0, 0, 0);
-    /* text-decoration: None; */
 }
-
 
 #result-table {
     width: 100%;
@@ -240,6 +222,13 @@ fieldset:not(#field1) input{
 }
 
 @media(min-width:997px) {
+
+    body,
+    header::before,
+    main::before,
+    #sidebar::before {
+        background: url('/img/Fabric-mid.jpg') 0 / cover fixed;
+    }
 
     div,
     input {
@@ -260,7 +249,6 @@ fieldset:not(#field1) input{
         width: 60%;
         margin: auto;
         text-align: center;
-        /* background-color: #fff; */
     }
 
     h1 {
@@ -274,11 +262,22 @@ fieldset:not(#field1) input{
     }
 }
 
-@media (max-width:996px) {
+@media (max-width:996px) and (min-width:550px) {
+
+    body,
+    header::before,
+    main::before,
+    #sidebar::before {
+        background: url('/img/Fabric-mid.jpg') 0 / cover fixed;
+    }
 
     div,
     input {
         font-size: 18px;
+    }
+
+    #time {
+        white-space: nowrap;
     }
 
     h1 {
@@ -305,7 +304,6 @@ fieldset:not(#field1) input{
         width: 100%;
         margin: auto;
         text-align: center;
-        /* background-color: #fff; */
     }
 
     .main-element {
@@ -321,5 +319,89 @@ fieldset:not(#field1) input{
         position: relative;
         right: none;
         height: 50vh;
+    }
+}
+
+@media (max-width:549px) {
+    #navbar,
+    #navbar-fix {
+        height: 60px;
+    }
+    #navbar-fix div{
+        height:40px;
+    }
+    body,
+    header::before,
+    main::before,
+    #sidebar::before {
+        background: url('/img/Fabric-small.jpg') 0 / cover fixed;
+    }
+
+    fieldset:first-child input,
+    fieldset:first-child select,
+    fieldset:first-child option {
+        width: 160px;
+        height: 30px;
+        background-color: transparent;
+        border: #fff 3px solid;
+        box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
+    }
+
+    div,
+    input {
+        font-size: 18px;
+    }
+
+
+    h1 {
+        font-size: 1.2em;
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px 0;
+        color: rgb(63, 57, 57);
+        text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
+        border-bottom: 3px solid rgb(114, 64, 64);
+    }
+
+    fieldset,
+    #table {
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: #fff 2px solid;
+    }
+
+    fieldset:nth-child(1),
+    fieldset:nth-child(4) {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .main-element {
+        width: 100%;
+    }
+
+    .side-element {
+        width: 100%;
+    }
+
+    .side-element {
+        width: 100%;
+        position: relative;
+        right: none;
+        height: 50vh;
+    }
+
+    #button {
+        font-weight: bold;
+        height: 40px;
+        width: 180px;
+        padding: 2px;
+        font-size: 1.1em;
+        margin-left: auto;
+        margin-right: auto;
+        transition: 1s;
     }
 }
