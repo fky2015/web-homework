@@ -61,7 +61,6 @@ legend {
     border: 2px solid #fff;
 }
 
-#result-table {}
 
 .button {
     margin: 20px;
@@ -147,6 +146,7 @@ th {
     background-color: burlywood;
     color: rgba(131, 64, 64, .5);
     border: none;
+    overflow: scroll；
 }
 
 td {
@@ -217,10 +217,14 @@ fieldset:not(#field1) input {
 
 #result-table {
     width: 100%;
-    overflow: auto;
+    overflow: scroll;
     margin: 30px 0;
 }
 
+.scroll{
+    height: 100%;
+    overflow: scroll;
+}
 @media(min-width:997px) {
 
     body,

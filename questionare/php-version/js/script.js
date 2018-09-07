@@ -128,7 +128,7 @@ $(function () {
 
     $.ajax({
       type: 'POST',
-      url: 'add.php',
+      url: '/php/add.php',
       data: {
         name: name.value,
         score: score,
@@ -155,7 +155,7 @@ $(function () {
     }
     $.ajax({
       type: 'POST',
-      url: 'query.php',
+      url: '/php/query.php',
       data: {
         name: name
       },
