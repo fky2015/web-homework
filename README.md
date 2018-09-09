@@ -6,6 +6,7 @@ some homework for web develogment, just some simple pages
 - 完成全部作业要求
 - 响应式
 - 较为良好的html语义
+- 分离
 
 ## work2:questionnaire
 
@@ -16,6 +17,7 @@ some homework for web develogment, just some simple pages
 ### php-version
 
 - 完成全部作业要求
+- 分离
 - jquery
 - ajax
 - scss
