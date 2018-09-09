@@ -22,4 +22,4 @@ some homework for web develogment, just some simple pages
 - 响应式
 - docker部署
 - 友好的设计
-
+- 防止注入

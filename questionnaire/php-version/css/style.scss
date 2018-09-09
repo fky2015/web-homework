@@ -1,11 +1,13 @@
-$background-img: url('/img/Fabric-mid.jpg') 0 / cover fixed;
+$background-img: url('/img/computer-mid.jpg') 0 / cover fixed;
+$background-img-small: url('/img/computer-small.jpg');
+$h1-color: rgb(37, 73, 59);
 
 // --------------------------------------------
 // overall setting
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(207, 196, 191);
+    color: rgb(221, 221, 221);
 }
 
 // --------------------------------------------
@@ -16,7 +18,7 @@ nav a {
 }
 
 #navbar-fix {
-    background-color: rgba(236, 236, 236, 0.7);
+    background-color: rgba(246, 246, 246, 0.87);
     width: 100%;
     position: fixed;
     z-index: 20;
@@ -77,7 +79,7 @@ main::before,
     left: 0;
     /* background: rgba(255, 0, 0, .5); */
     z-index: -1;
-    filter: blur(20px);
+    filter: blur(40px);
     margin: -30px;
     box-shadow: 3px 3px 3px rgba(44, 44, 44, .5);
 }
@@ -123,7 +125,6 @@ legend {
         /* border: 2px white solid; */
         font-weight: bold;
         height: 40px;
-        width: 240px;
         padding: 2px;
         font-size: 1.1em;
         margin-left: auto;
@@ -249,6 +250,10 @@ td {
         font-size: 25px;
     }
 
+    #button {
+        width: 240px;
+    }
+
     fieldset,
     #table {
         width: 60%;
@@ -270,7 +275,7 @@ td {
         width: 80%;
         margin: 30px auto;
         padding: 20px;
-        color: rgb(63, 57, 57);
+        color: $h1-color;
         text-shadow: 2px 2px 1px rgba(44, 44, 44, .3);
         border-bottom: 3px solid rgb(114, 64, 64);
     }
@@ -294,12 +299,16 @@ td {
         white-space: nowrap;
     }
 
+    #button {
+        width: 240px;
+    }
+
     h1 {
         font-size: 1.6em;
         width: 90%;
         margin: 30px auto;
         padding: 20px;
-        color: rgb(63, 57, 57);
+        color: $h1-color;
         text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
         border-bottom: 3px solid rgb(114, 64, 64);
     }
@@ -343,11 +352,14 @@ td {
         height: 40px;
     }
 
-    body,
+    body {
+        background: $background-img-small no-repeat fixed;
+    }
+
     header::before,
     main::before,
     #sidebar::before {
-        background: url('/img/Fabric-small.jpg') 0 / cover fixed;
+        background: $background-img-small 0/cover fixed;
     }
 
     fieldset:first-child input,
@@ -370,7 +382,7 @@ td {
         width: 100%;
         margin: 10px auto;
         padding: 10px 0;
-        color: rgb(63, 57, 57);
+        color: $h1-color;
         text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
         border-bottom: 3px solid rgb(114, 64, 64);
     }
@@ -405,7 +417,7 @@ td {
     #button {
         font-weight: bold;
         height: 40px;
-        width: 180px;
+        width: 140px;
         padding: 2px;
         font-size: 1.1em;
         margin-left: auto;

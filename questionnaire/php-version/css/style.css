@@ -2,7 +2,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #cfc4bf;
+  color: #dddddd;
 }
 
 nav div,
@@ -11,7 +11,7 @@ nav a {
 }
 
 #navbar-fix {
-  background-color: rgba(236, 236, 236, 0.7);
+  background-color: rgba(246, 246, 246, 0.87);
   width: 100%;
   position: fixed;
   z-index: 20;
@@ -70,7 +70,7 @@ main::before,
   left: 0;
   /* background: rgba(255, 0, 0, .5); */
   z-index: -1;
-  filter: blur(20px);
+  filter: blur(40px);
   margin: -30px;
   box-shadow: 3px 3px 3px rgba(44, 44, 44, 0.5);
 }
@@ -115,7 +115,6 @@ legend {
   /* border: 2px white solid; */
   font-weight: bold;
   height: 40px;
-  width: 240px;
   padding: 2px;
   font-size: 1.1em;
   margin-left: auto;
@@ -224,12 +223,16 @@ td {
   header::before,
   main::before,
   #sidebar::before {
-    background: url("/img/Fabric-mid.jpg") 0/cover fixed;
+    background: url("/img/computer-mid.jpg") 0/cover fixed;
   }
 
   div,
   input {
     font-size: 25px;
+  }
+
+  #button {
+    width: 240px;
   }
 
   fieldset,
@@ -253,7 +256,7 @@ td {
     width: 80%;
     margin: 30px auto;
     padding: 20px;
-    color: #3f3939;
+    color: #25493b;
     text-shadow: 2px 2px 1px rgba(44, 44, 44, 0.3);
     border-bottom: 3px solid #724040;
   }
@@ -263,7 +266,7 @@ td {
   header::before,
   main::before,
   #sidebar::before {
-    background: url("/img/Fabric-mid.jpg") 0/cover fixed;
+    background: url("/img/computer-mid.jpg") 0/cover fixed;
   }
 
   div,
@@ -275,12 +278,16 @@ td {
     white-space: nowrap;
   }
 
+  #button {
+    width: 240px;
+  }
+
   h1 {
     font-size: 1.6em;
     width: 90%;
     margin: 30px auto;
     padding: 20px;
-    color: #3f3939;
+    color: #25493b;
     text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
     border-bottom: 3px solid #724040;
   }
@@ -322,11 +329,14 @@ td {
     height: 40px;
   }
 
-  body,
+  body {
+    background: url("/img/computer-small.jpg") no-repeat fixed;
+  }
+
   header::before,
   main::before,
   #sidebar::before {
-    background: url("/img/Fabric-small.jpg") 0/cover fixed;
+    background: url("/img/computer-small.jpg") 0/cover fixed;
   }
 
   fieldset:first-child input,
@@ -349,7 +359,7 @@ td {
     width: 100%;
     margin: 10px auto;
     padding: 10px 0;
-    color: #3f3939;
+    color: #25493b;
     text-shadow: 2px 2px 1px rgba(177, 177, 177, 0.3);
     border-bottom: 3px solid #724040;
   }
@@ -384,7 +394,7 @@ td {
   #button {
     font-weight: bold;
     height: 40px;
-    width: 180px;
+    width: 140px;
     padding: 2px;
     font-size: 1.1em;
     margin-left: auto;
