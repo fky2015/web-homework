@@ -341,6 +341,23 @@ td {
     }
 }
 
+// #navbar{
+//     position:fixed;
+//     left:0;
+//     top:0;
+//     width: 100%;
+//     z-index:1000;
+// }
+// #navbar-fix{
+//     position: relative;
+//     left:-999em;
+//     z-index: 1000;
+//     transition: 0.3s linear;
+// }
+// #navbar:hover #navbar-fix{
+//     left:0;
+// }
+
 @media (max-width:549px) {
 
     #navbar,
