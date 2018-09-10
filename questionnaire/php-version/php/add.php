@@ -6,6 +6,7 @@ $conn = new mysqli("db", "root", "password", "db");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
 // $sql = "INSERT INTO score(s_name, s_score, s_time) VALUES('" . $name . "', " . $score . "," . $time . ")";
 // if ($conn->query($sql) == true) {
 //     echo "seccess";
