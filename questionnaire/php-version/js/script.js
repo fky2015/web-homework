@@ -1,5 +1,7 @@
 $(function () {
   window.startTime = new Date()
+
+  // 打印greeting
   var myHour = window.startTime.getHours()
   var greetString = ''
   if (myHour < 12) {
@@ -9,19 +11,25 @@ $(function () {
   } else {
     greetString += 'Good Evening!'
   }
-  // greetString += "   It's " + this.startTime.toLocaleString() + " ."
   document.getElementById('time').textContent = greetString
 
   window.Timing = function () {
+    // 计算并更新时间
     var ThisTime = new Date()
     var second = (ThisTime.getTime() - window.startTime.getTime()) / 1000
     document.getElementById('timer').innerText = (0 | second) + ' s'
     return second
   }
 
+  // 设置定时刷新
   document.interval = setInterval('Timing()', 1000)
 
   function verifyRadio (name, answer, point = 5) {
+    // 单选题判断
+    // name : id of element
+    // answer : string
+    // point : int
+    // return resultScore
     var nodes = document.getElementsByName(name)
     var res = ''
     for (let i = 0; i < nodes.length; i++) {
@@ -38,7 +46,11 @@ $(function () {
   }
 
   function verifyCheckbox (name, answer, totalpoint = 5) {
-    // answer => Array()
+    // 多选题判断
+    // name : id of element
+    // answer : Array()
+    // totalpoint : int
+    // return resultScore
     var nodes = document.getElementsByName(name)
     var res = []
 
@@ -59,16 +71,12 @@ $(function () {
   }
 
   function tryToRun (code) {
-    console.log(code)
-    ;(code)
+    // 判题
     try {
       eval(code)
     } catch (err) {
-      alert('code error: ' + err.message)
-      // console.log('err sdfa')
       return false
     }
-    // console.log('ok')
     return true
   }
 
@@ -87,11 +95,13 @@ $(function () {
   }
 
   function show_score (herf_value, score , totalscore) {
+    // 显示分数到导航栏
     $("a[href='" + herf_value + "']")[0].innerText = score + ' / ' + totalscore
     return score
   }
 
   var submit_func = function (event) {
+    // 计算分数并提交
     event.preventDefault()
 
     // 检查是否为空
@@ -104,27 +114,27 @@ $(function () {
     }
 
     // 计算分数
-
     score = 0
+    
+    try {
+      score += show_score('#field4', verifyCode('q5', 3, 9), 5)
+    } catch(err) {
+      alert('code error: ' + err.message)
+      return false; // 阻断
+    }
     score += show_score('#field2', verifyRadio('q1', 'C') + verifyRadio('q2', 'C'), 10)
     score += show_score('#field3', verifyCheckbox('q3', ['B', 'D']) + verifyCheckbox('q4', ['A', 'B', 'C', 'D']), 10)
-    score += show_score('#field4', verifyCode('q5', 3, 9), 5)
 
     var endTime = new Date()
     var totalTime = Timing()
-    // alert('\nyour point is ' + score + ' / ' + 25 + '\n\n' + '总时间: ' + totalTime + ' seconds')
-    // console.log((endTime - window.startTime) / 1000 + ' seconds')
     var node = document.getElementById('score').value = score
 
     // 停止计时
     clearInterval(document.interval)
-    console.log(event);
-    
-    // if (event.ctrlKey) {
-      msg = 'your score: ' + score + '\n'
-      msg += 'your time: ' + totalTime + '\n'
-      alert(msg);
-    // }
+
+    msg = 'your score: ' + score + '\n'
+    msg += 'your time: ' + totalTime + '\n'
+    alert(msg)
 
     $.ajax({
       type: 'POST',
@@ -149,6 +159,7 @@ $(function () {
   }
 
   function query (event) {
+    // 查询分数
     var name = $('#name')[0].value
     if (event.ctrlKey) {
       name = ''
@@ -162,7 +173,6 @@ $(function () {
       timeout: 2000,
       success: function (msg) {
         // 提交成功后的回调函数
-        // console.log('let it be')
 
         $('#result-table')[0].innerHTML = msg
       },
@@ -173,6 +183,7 @@ $(function () {
   }
 
   function click_toggle (event) {
+    // 导航栏点击特效
     var child = $(this)[0].children
     if (!child[0].checked) {
       child[0].checked = true
@@ -181,27 +192,18 @@ $(function () {
     }
   }
   function choose_toggle (event) {
-    // document.test = $(this)
-    // console.log('t')
+    // input勾选后的特效
     var children = $(this).find('div')
-    // console.log(children)
-    // document.test = children
     for (var i = 0;i < children.length;i++) {
-      // console.log('in loop')
-      // document.test = children[i]
       if (children[i].firstElementChild.checked) {
-        // console.log('1')
-
-        // child[0].checked = true
         $(children[i]).css({color: 'rgb(157, 146, 141)'})
       }else {
-        // console.log('2')
-
-        // child[0].checked = false
         $(children[i]).css('color', 'rgb(207, 196, 191)')
       }
     }
   }
+
+  // 绑定事件
   $('fieldset >div > div').click(click_toggle)
   $('fieldset.toggle > div').delegate($('fieldset.toggle >div > div'), 'click', choose_toggle)
   document.getElementById('form').onsubmit = submit_func
